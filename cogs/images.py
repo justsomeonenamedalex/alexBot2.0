@@ -40,3 +40,7 @@ class Images(commands.Cog):
             await ctx.send("Page not found")
 
     # TODO: Implement xkcd commands
+
+
+def setup(client):
+    client.add_cog(Images(client))

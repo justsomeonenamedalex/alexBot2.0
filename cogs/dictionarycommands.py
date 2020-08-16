@@ -52,3 +52,7 @@ class DictionaryCommands(commands.Cog):
         e = discord.Embed(title=f"Antonyms for {term}", description="\n".join(word_antonym))
 
         await ctx.send(embed=e)
+
+
+def setup(client):
+    client.add_cog(DictionaryCommands(client))

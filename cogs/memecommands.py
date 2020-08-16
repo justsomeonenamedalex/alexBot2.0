@@ -96,28 +96,9 @@ class MemeCommands(commands.Cog):
             top_text = random.choice(messages)
             bottom_text = random.choice(messages)
 
-            url = 'https://api.imgflip.com/caption_image'
-            params = {
-                'username': imgflip_username,
-                'password': imgflip_password,
-                'template_id': meme_id,
-                'text0': top_text,
-                'text1': bottom_text
-            }
+            meme_command = self.client.get_command("meme")
 
-            response = requests.request('POST', url, params=params).json()  # Creates the meme
-            if response:
-                try:
-                    img_url = response['data']['url']
-
-                    # Again, the image is sent in an embed because discord doesn't always show previews for links, but does always for embeds
-                    embed = discord.Embed(title="Meme :)", url=img_url)
-                    embed.set_image(url=img_url)
-                    await ctx.send(embed=embed)
-                except KeyError as e:
-                    await ctx.send("Something went wrong, sorry")
-            else:
-                await ctx.send("Sorry, page not found")
+            await ctx.invoke(meme_command, meme_id, top_text, bottom_text)
 
     @commands.command()
     async def bug(self, ctx, *, text):
@@ -151,3 +132,7 @@ class MemeCommands(commands.Cog):
                     await ctx.send("Something went wrong, sorry")
             else:
                 await ctx.send("Sorry, page not found")
+
+
+def setup(client):
+    client.add_cog(MemeCommands(client))
