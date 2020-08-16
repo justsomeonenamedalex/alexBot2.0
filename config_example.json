@@ -1,5 +1,7 @@
 {
   "bot_token": "a",
   "prefix": ".",
-  "invite": "link"
+  "invite": "link",
+  "imgflip_username": "name",
+  "imgflip_password": "password"
 }
