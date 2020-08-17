@@ -4,5 +4,8 @@
   "invite": "link",
   "imgflip_username": "name",
   "imgflip_password": "password",
-  "nasa_key": "a"
+  "nasa_key": "a",
+  "lyricsgenius_key": "a",
+  "spotify_id": "a",
+  "spotify_secret": "a"
 }
