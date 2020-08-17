@@ -15,7 +15,7 @@ With the virtualenv active, run the following command:
 pip install -r requirements.txt
 ```
 
-Next rename `config_example.json` to `config.json` and `discord.example.log` to `discord.log`. Then, make changes to config.json to use your api keys.
+Next rename `config_example.json` to `config.json` and `discord.example.log` to `discord.log`. Then, make changes to config.json to use your api keys. [This should help with that](https://github.com/justsomeonenamedalex/alexBot2.0/wiki/API-Keys)
 
 Then just run `bot.py` from the terminal with the following, or a similar, command:
 ```
