@@ -68,3 +68,7 @@ class Music(commands.Cog):
             await ctx.send(links[0])
         else:
             await ctx.send("Sorry, the artist wasn't found")
+
+
+def setup(client):
+    client.add_cog(Music(client))
